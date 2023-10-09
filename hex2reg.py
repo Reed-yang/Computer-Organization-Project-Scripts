@@ -1,6 +1,9 @@
 import re
 import os
 
+OUT_SIZE = 64
+REG_NUM = OUT_SIZE*OUT_SIZE//32
+
 def format_hex(input_file, output_file):
     with open(input_file, 'rb') as f: 
             data = f.read().decode('utf-8', errors='ignore')  # 指定编码格式    
@@ -35,15 +38,16 @@ def format_hex(input_file, output_file):
     #             for k in range(4):
     #                 f.write(formatted_values[i * 4 + k + j * 128])
     #             f.write(' ')
-    for i in range(32):
+    for i in range(REG_NUM):
         filename = f"reg_txt/output_file_{i}.txt"
-        with open(filename, 'w') as f:
-            for j in range(len(formatted_values) // 32):
-                    f.write(formatted_values[i + j * 32])
-                    f.write(' ') 
+        with open(filename, 'a') as f:
+            # f.write('v2.0 raw\n') 
+            for j in range(len(formatted_values) // REG_NUM):
+                    f.write(formatted_values[i + j * REG_NUM])
+                    f.write('\n') 
 
 
 if __name__ == '__main__':
-    input_file = 'output.txt'  
+    input_file = 'output_3.txt'  
     output_file = 'output.txt' 
     format_hex(input_file, output_file)
