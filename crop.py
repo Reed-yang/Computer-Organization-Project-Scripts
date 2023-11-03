@@ -1,7 +1,7 @@
 import cv2
 
 # 打开视频文件
-cap = cv2.VideoCapture('3_x264.mp4')
+cap = cv2.VideoCapture('为什么要演奏春日影.mp4')
 
 # 获取视频的帧率和总帧数
 frame_rate = int(cap.get(cv2.CAP_PROP_FPS))
@@ -11,7 +11,7 @@ total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
 output_width = 1080
 output_height = 1080
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # 选择适当的编解码器
-out = cv2.VideoWriter('crop_3.mp4', fourcc, frame_rate, (output_width, output_height))
+out = cv2.VideoWriter('crop_4.mp4', fourcc, frame_rate, (output_width, output_height))
 
 # 读取视频帧并进行剪裁
 while True:

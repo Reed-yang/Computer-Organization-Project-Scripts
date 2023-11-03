@@ -51,7 +51,7 @@ def convert_frame_to_hex(frame):
 
 
 # 读取原始视频
-cap = cv2.VideoCapture('crop_3.mp4')
+cap = cv2.VideoCapture('crop_4.mp4')
 
 # 获取原始视频的帧率、分辨率等信息
 fps = int(cap.get(cv2.CAP_PROP_FPS))

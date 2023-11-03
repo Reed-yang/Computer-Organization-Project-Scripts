@@ -41,13 +41,13 @@ def format_hex(input_file, output_file):
     for i in range(REG_NUM):
         filename = f"reg_txt/output_file_{i}.txt"
         with open(filename, 'a') as f:
-            # f.write('v2.0 raw\n') 
+            f.write('v2.0 raw\n') 
             for j in range(len(formatted_values) // REG_NUM):
                     f.write(formatted_values[i + j * REG_NUM])
                     f.write('\n') 
 
 
 if __name__ == '__main__':
-    input_file = 'output_3.txt'  
+    input_file = 'output.txt'  
     output_file = 'output.txt' 
     format_hex(input_file, output_file)
